@@ -1,0 +1,414 @@
+/* Start Varables */
+:root {
+  --main-color: hsl(174, 85%, 43%);
+  --section-background: hsl(0, 0%, 96%);
+  --secondary-color: hsl(199, 32%, 25%);
+  --section-padding: 60px;
+  --section-margin: 100px;
+  --p-color: hsl(0, 0%, 47%);
+  --p-line-height: 1.8;
+  --main-duration: 300ms;
+}
+/* End Varables */
+/* Start Globel Rule */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth; 
+}
+body {
+  font-family: "Work Sans", sans-serif;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* The Small Screens */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* The Medium Screens */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* The Large Screens */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End Globel Rule */
+/* Start Components */
+.special-heading {
+  color: hsl(210, 5%, 90%);
+  text-align: center;
+  font-size: 100px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  margin: 0;
+}
+.special-heading + p {
+  color: hsl(0, 0%, 47%);
+  text-align: center;
+  font-size: 20px;
+  margin: -30px 0 0;
+}
+@media (max-width: 767px) {
+  .special-heading {
+    font-size: 60px;
+  }
+  .special-heading + p {
+    margin-top: -20px;
+  }
+}
+/* End Components */
+/* The Start Of The Header Style */
+header {
+  padding: 20px;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  width: 60px;
+}
+header .links {
+  position: relative;
+}
+header .links:hover .icon span:nth-child(2) {
+  width: 100%;
+}
+header .links .icon {
+  width: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+header .links .icon span {
+  background: hsl(0, 0%, 20%);
+  height: 2px;
+  margin-bottom: 5px;
+}
+header .links .icon span:first-child {
+  width: 100%;
+}
+header .links .icon span:nth-child(2) {
+  width: 60%;
+  transition: var(--main-duration);
+}
+header .links .icon span:last-child {
+  width: 100%;
+}
+header .links ul {
+  background: var(--section-background);
+  list-style: none;
+  min-width: 200px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 15px);
+  display: none;
+  z-index: 1;
+}
+header .links ul::before {
+  content: "";
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent var(--section-background) transparent;
+  position: absolute;
+  right: 5px;
+  top: -20px;
+}
+header .links:hover ul {
+  display: block;
+}
+header .links ul li a {
+  color: hsl(0, 0%, 20%);
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+  transition: var(--main-duration);
+}
+header .links ul li a:hover {
+  padding-left: 25px;
+}
+header .links ul li:not(:last-child) a {
+  border-bottom: 1px solid hsl(0, 0%, 87%);
+}
+/* The End Of The Header Style */
+/* Start Making The Landing Section */
+.landing {
+  background-image: url(../images/landing.jpg);
+  background-size: cover;
+  height: calc(100vh - 64px);
+  position: relative;
+}
+.landing .intro-text {
+  width: 320px;
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.landing .intro-text h1 {
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 50px;
+  margin: 0;
+}
+.landing .intro-text p {
+  font-size: 19px;
+  line-height: var(--p-line-height);
+}
+/* The End Of The Landing Section */
+/* Start Making The Features Section */
+.features {
+  background: var(--section-background);
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.features .feat {
+  text-align: center;
+  padding: 20px;
+}
+.features .feat i {
+  color: var(--main-color);
+}
+.features .feat h3 {
+  font-weight: 800;
+  margin: 30px 0;
+}
+.features .feat p {
+  color: var(--p-color);
+  font-size: 17px;
+  line-height: var(--p-line-height);
+}
+/* The End Of The Features Section */
+/* Start Making The Services Section */
+.services {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.services .services-content {
+  margin-top: var(--section-margin);
+}
+.services .services-content .service {
+  display: flex;
+  margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+  .services .services-content .srv {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.services .services-content .service i {
+  color: var(--main-color);
+  flex-basis: 60px;
+}
+.services .services-content .service .text {
+  flex: 1;
+}
+.services .services-content .service .text h3 {
+  margin: 0 0 20px;
+}
+.services .services-content .service .text p {
+  color: hsl(0, 0%, 27%);
+  font-weight: 300;
+  line-height: var(--p-line-height);
+}
+.services .services-content .image {
+  text-align: center;
+  position: relative;
+}
+.services .services-content .image::before {
+  content: "";
+  background: var(--secondary-color);
+  width: 100px;
+  height: calc(100% + 100px);
+  position: absolute;
+  right: 0;
+  top: -50px;
+  z-index: -1;
+}
+.services .services-content .image img {
+  width: 260px;
+}
+/* I Think It Should Be 1399px */
+@media (max-width: 1199px) {
+  .image-column {
+    display: none;
+  }
+}
+/* The End Of The Services Section */
+/* Start Making The Portfolio Section */
+.portflio {
+  background: var(--section-background);
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.portflio .portfolio-content {
+  margin-top: var(--section-margin);
+}
+.portflio .portfolio-content .card {
+  background: hsl(0, 0%, 100%);
+}
+.portflio .portfolio-content .card img {
+  max-width: 100%;
+}
+.portflio .portfolio-content .card .info {
+  padding: 20px;
+}
+.portflio .portfolio-content .card .info h3 {
+  margin: 0;
+}
+.portflio .portfolio-content .card .info p {
+  color: var(--p-color);
+  line-height: var(--p-line-height);
+  margin-bottom: 0;
+}
+/* The End Of The Portfolio Section */
+/* Start Making The About Section */
+.about {
+  padding-top: var(--section-padding);
+  padding-bottom: calc(var(--section-padding) + 60px);
+}
+.about .about-content {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (max-width: 991px) {
+  .about .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.about .about-content .image {
+  width: 250px;
+  height: 375px;
+  position: relative;
+}
+@media (max-width: 991px) {
+  .about .about-content .image {
+    margin: 0 auto 60px;
+  }
+}
+.about .about-content .image::before {
+  content: "";
+  background-color: hsl(210, 5%, 93%);
+  width: 100px;
+  height: calc(100% + 80px); /* 100px */
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  z-index: -1;
+}
+.about .about-content .image::after {
+  content: "";
+  border-left: 80px solid var(--main-color);
+  border-bottom: 80px solid var(--main-color);
+  width: 120px;
+  height: 300px;
+  position: absolute;
+  top: -40px;
+  right: -150px;
+  z-index: -1;
+}
+@media (max-width: 991px) {
+  .about .about-content .image::before,
+  .about .about-content .image::after {
+    display: none;
+  }
+}
+.about .about-content .image img {
+  max-width: 100%;
+}
+.about .about-content .text {
+  flex-basis: calc(100% - 500px);
+}
+.about .about-content .text p:first-of-type {
+  font-weight: bold;
+  line-height: var(--p-line-height);
+  margin-bottom: 50px;
+}
+.about .about-content .text hr {
+  border-color: var(--main-color);
+  width: 50%;
+  display: inline-block;
+}
+.about .about-content .text p:last-of-type {
+  color: var(--p-color);
+  line-height: var(--p-line-height);
+}
+/* The End Of The About Section */
+/* Start Making The Contact Section */
+.contact {
+  background: var(--section-background);
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.contact .info {
+  text-align: center;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.contact .info .label {
+  color: var(--secondary-color);
+  font-size: 35px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  margin-bottom: 20px;
+}
+.contact .info .link {
+  color: var(--main-color);
+  font-size: 35px;
+  font-weight: 800;
+  text-decoration: none;
+  margin-bottom: 20px;
+  display: block;
+}
+.contact .info .social {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+}
+.contact .info .social i {
+  color: var(--secondary-color);
+  margin-left: 10px;
+}
+@media (max-width: 767px) {
+  .contact .info .label,
+  .contact .info .link {
+    font-size: 25px;
+  }
+}
+/* The End Of The Contact Section */
+/* Start Making The Footer Section */
+footer {
+  color: hsl(0, 0%, 100%);
+  background: var(--secondary-color);
+  font-size: 18px;
+  text-align: center;
+  padding: 30px 10px;
+}
+footer span {
+  color: var(--main-color);
+  font-weight: bold;
+}
+/* The End Of The Footer Section */
